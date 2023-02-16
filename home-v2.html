@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Good Wolf</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KX659MN');</script>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Staatliches&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+	<style>
+		:root {
+		  --gwblack: #222;
+		  --gwred: #FF5B40;
+		  --darkblue: #0C4F6C;
+		  --lightblue: #D6E5EB;
+		  --white: #ffffff;
+		  --gray: #F0F0F0;
+		  --headlineFont: 'Staatliches', Impact, cursive;
+		  --bodyFont: 'DM Sans', Arial, Helvetica, sans-serif;
+		}
+		html, body { background-color: #1E1E1E; font-family: var(--bodyFont); }
+		h1, h2, h3 { font-family: var(--headlineFont); text-transform: uppercase; }
+		
+		header h1 { color: var(--gwred); font-size: clamp(8rem, 3.0588rem + 18.8235vw, 20rem); line-height:0.75; }
+		header h1 span { background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent; background-image: url('pan-tn2.jpg'); background-size:cover; }
+		
+		.whiteBG { background-color: var(--white); }
+		.top_headline h1 { position:relative; }
+			.top_headline h1 span { color:var(--gwred); }
+			.top_headline h1::after { position:absolute; content:""; }
+		
+		#v-pills-tab { min-width:50%; }
+		.nav-pills .nav-link { border-radius:0 !important; text-align: left; padding-top: 1rem; padding-bottom: 1rem; }
+		#strat_innov-tab { background-color: #E8EAEC; color: var(--gwblack); transform: rotate(-2deg); z-index: 3;}
+		#prod_design-tab { background-color: var(--gwred); color: var(--white); transform: rotate(-6deg); z-index: 4; }
+		#creative_content-tab { background-color: var(--darkblue); color: var(--white); transform: rotate(2deg); z-index: 2;}
+		#growth_mark-tab { background-color: var(--lightblue); color: var(--gwblack); transform: rotate(-3deg); z-index: 1;}
+		
+		@media (min-width:1310px) {
+		.op_container { width:100%; max-width:calc(((100vw - 1250px) / 2) + 1250px); margin-right:0; margin-left: auto; display: grid;
+			grid-template-columns: 35% auto;
+			overflow: hidden; }
+		}
+		@media (min-width:992px) {
+			.op_container { width: 100%; max-width: calc(100vw - 30px); margin-right:0; margin-left: auto; display: grid;
+				grid-template-columns: 35% auto;
+				overflow: hidden; }
+		}
+		
+		#good_company h2 { position: relative; }
+			#good_company h2::after { position:absolute; content:""; }
+		#good_company h2 span { color: var(--gwred) !important; }
+		
+		
+		
+		.panopticon_cover { width: 100%; max-width: 112.5rem; display:grid; grid-template-columns: repeat(123, minmax(4px, 1fr)); grid-template-rows: repeat(58, minmax(4px, 1fr)); position: relative; aspect-ratio: 1466 / 687; }
+			.panopticon_cover::after { position: absolute; content:""; background-image:url('pan-cover.svg'); background-size: cover; top:0; left:0; width:100%; height:100%; }
+		.panopticon_cover > div { background-size: cover; }
+		.pconc1 { grid-column: 1 / 32; grid-row: 1 / 30; padding-right:0.4vw; background-image: url('pan-tn1.jpg'); }
+		.pconc2 { grid-column: 32 / 78; grid-row: 1 / 30; padding-left:0.4vw;  background-image: url('pan-tn2.jpg'); }
+		.pconc3 { grid-column: 79 / 96; grid-row: 1 / 46; padding-right:0.3vw;  background-image: url('pan-tn3.jpg'); }
+		.pconc4 { grid-column: 96 / 123; grid-row: 1 / 20; padding-bottom:0.28vw;  background-image: url('pan-tn4.jpg'); }
+		.pconc5 { grid-column: 1 / 47; grid-row: 30 / 58; padding-right:0.7vw; padding-top:0.7vw; background-image: url('pan-tn5.jpg'); }
+		.pconc6 { grid-column: 48 / 78; grid-row: 29 / 58; padding-top:0.4vw;  background-image: url('pan-tn6.jpg'); }
+		.pconc7 { grid-column: 79 / 94; grid-row: 47 / 58;  background-image: url('pan-tn7.jpg'); }
+		.pconc8 { grid-column: 96 / 123; grid-row: 21 / 58;  background-image: url('pan-tn8.jpg'); }
+		
+		.logo_wrapper { display:grid; grid-template-columns: repeat(5, 1fr); align-items: center; justify-items: center; gap: 4%; }
+			.logo_wrapper img { opacity: 0.8; }
+			.logo_wrapper svg { width: 100%; height:auto; }
+		
+		#footer { background-image: url('footer_bg.svg'); background-size:cover; background-position: center top; }
+	</style>
+  </head>
+  <body>
+	  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX659MN"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<h1>GOOD<br><span>WOLF</span></h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="whiteBG">
+			<div class="container top_headline">
+				<div class="row">
+					<div class="col text-center">
+						<h1><span>We help you</span> tell your story, <img src="arrows.svg" alt="" role="presentation" width="39" height="32" /> engage your audience &mdash; transform your business &mdash; increase your revenue <img src="arrows.svg" alt="" role="presentation" width="39" height="32" /> <span>and drive growth.</span></h1>
+					</div>
+				</div>
+			</div>
+			<div class="container servicesmo">
+				<div class="row">
+					<div class="col">
+						<h2>Services</h2>
+						<div class="d-none d-md-flex align-items-start">
+						  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+							<button class="nav-link active" id="strat_innov-tab" data-bs-toggle="pill" data-bs-target="#strat_innov" type="button" role="tab" aria-controls="strat_innov" aria-selected="true">Strategy &amp; Innovation</button>
+							<button class="nav-link" id="prod_design-tab" data-bs-toggle="pill" data-bs-target="#prod_design" type="button" role="tab" aria-controls="prod_design" aria-selected="false">Product &amp; Design</button>
+							<button class="nav-link" id="creative_content-tab" data-bs-toggle="pill" data-bs-target="#creative_content" type="button" role="tab" aria-controls="creative_content" aria-selected="false">Creative &amp; Content</button>
+							<button class="nav-link" id="growth_mark-tab" data-bs-toggle="pill" data-bs-target="#growth_mark" type="button" role="tab" aria-controls="growth_mark" aria-selected="false">Growth &amp; Marketing</button>
+						  </div>
+						  <div class="tab-content" id="v-pills-tabContent">
+							<div class="tab-pane fade show active" id="strat_innov" role="tabpanel" aria-labelledby="strat_innov-tab" tabindex="0"><p>Strategy is our sweet spot, and our work begins here. We start by understanding the lay of the land – your audience, competitors, comparables, pain points, and objectives – and developing a game plan to chart where you need to go and how to get there.</p></div>
+							<div class="tab-pane fade" id="prod_design" role="tabpanel" aria-labelledby="prod_design-tab" tabindex="0"><p>Since the early days of the web through today, we’ve created some of the Internet’s best-known consumer experiences. From ground up brand building and identity to a website UX/ UI refresh or production design, we can help you reach the next evolution.</p></div>
+							<div class="tab-pane fade" id="creative_content" role="tabpanel" aria-labelledby="creative_content-tab" tabindex="0"><p>Creative storytelling, engaging content, and bold design capabilities designed to hook your audience and keep them coming back. Created by award winning creators, producers and editors across every platform including articles, social, video and pods.</p></div>
+							<div class="tab-pane fade" id="growth_mark" role="tabpanel" aria-labelledby="growth_mark-tab" tabindex="0"><p>From hyper-focused lead gen to powerful brand awareness, we target customers across every touchpoint -- whether your goal is to get in front of new customers or deepen engagement with the ones you have.</p></div>
+						  </div>
+						</div>
+						
+						
+						<div class="d-block d-md-none accordion accordion-flush" id="servicesAccordion">
+						  <div class="accordion-item">
+							<h2 class="accordion-header" id="strat-innov-heading">
+							  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#strat-innov-content" aria-expanded="false" aria-controls="strat-innov-content">
+								Strategy &amp; Innovation
+							  </button>
+							</h2>
+							<div id="strat-innov-content" class="accordion-collapse collapse show" aria-labelledby="strat-innov-heading" data-bs-parent="#servicesAccordion">
+							  <div class="accordion-body"><p>Strategy is our sweet spot, and our work begins here. We start by understanding the lay of the land – your audience, competitors, comparables, pain points, and objectives – and developing a game plan to chart where you need to go and how to get there.</p></div>
+							</div>
+						  </div>
+						  <div class="accordion-item">
+							<h2 class="accordion-header" id="prod-design-heading">
+							  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#prod-design-content" aria-expanded="false" aria-controls="prod-design-content">
+								Product &amp; Design
+							  </button>
+							</h2>
+							<div id="prod-design-content" class="accordion-collapse collapse" aria-labelledby="prod-design-heading" data-bs-parent="#servicesAccordion">
+							  <div class="accordion-body"><p>Since the early days of the web through today, we’ve created some of the Internet’s best-known consumer experiences. From ground up brand building and identity to a website UX/ UI refresh or production design, we can help you reach the next evolution.</p></div>
+							</div>
+						  </div>
+						  <div class="accordion-item">
+							<h2 class="accordion-header" id="creative-cont-heading">
+							  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#creative-cont-content" aria-expanded="false" aria-controls="creative-cont-content">
+								Creative &amp; Content
+							  </button>
+							</h2>
+							<div id="creative-cont-content" class="accordion-collapse collapse" aria-labelledby="creative-cont-heading" data-bs-parent="#servicesAccordion">
+							  <div class="accordion-body"><p>Creative storytelling, engaging content, and bold design capabilities designed to hook your audience and keep them coming back. Created by award winning creators, producers and editors across every platform including articles, social, video and pods.</p></div>
+							</div>
+						  </div>
+						  <div class="accordion-item">
+							  <h2 class="accordion-header" id="growth-heading">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#growth-content" aria-expanded="false" aria-controls="growth-content">
+								  Growth &amp; Marketing
+								</button>
+							  </h2>
+							  <div id="growth-content" class="accordion-collapse collapse" aria-labelledby="growth-heading" data-bs-parent="#servicesAccordion">
+								<div class="accordion-body"><p>From hyper-focused lead gen to powerful brand awareness, we target customers across every touchpoint -- whether your goal is to get in front of new customers or deepen engagement with the ones you have.</p></div>
+							  </div>
+							</div>
+						  
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="whiteBG" id="our-process">
+			<div class="op_container">
+				<h2 class="d-none d-block-md">Our Process</h2>
+				<div class="op_controls">
+					<h2 class="d-block d-none-md">Our Process</h2>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+				<div class="op_content">
+					<div id="op_content_wrapper" class="swiper opSwiper">
+						<div class="swiper-wrapper">
+							<div class="op_each swiper-slide">
+								<p class="op_count">01</p>
+								<h4>Discovery</h4>
+								<p>The foundation of every great strategy begins with a good look under the hood. We begin by evaluating the current state of your business and market position, diving into every aspect, from your target audience, competition and comparables, to current market trends and opportunities. Don't worry, we pay close attention to what's working, as well as what isn't, to make sure we don't throw the baby out with the bathwater.</p>
+							</div>
+							<div class="op_each swiper-slide">
+								<p class="op_count">02</p>
+								<h4>Idea Generation</h4>
+								<p>Here's the fun part. The GoodWolf Ideas Lab is where innovation and creative projects are born. Our award-winning creatives identify the angles and stories that can effectively communicate your core value and make you stand out in a crowded market. Our approach is 360 and we love to uncover new and effective ways to extend your brand to meet consumers where they are… and in ways that trigger action.</p>
+							</div>
+							<div class="op_each swiper-slide">
+								<p class="op_count">03</p>
+								<h4>Strategic Planning</h4>
+								<p>Armed with our research and fresh ideas (never one size fits all) we get to work on a clear strategic plan that outlines the steps needed to achieve your business objectives and goals. This plan usually includes a detailed marketing strategy, budget, and timeline for implementation with natural GO points for you to "greenlight" new projects and initiatives.</p>
+							</div>
+							<div class="op_each swiper-slide">
+								<p class="op_count">04</p>
+								<h4>Execution &amp; Delivery</h4>
+								<p>Next comes making the dream a reality. We work closely with your team to roll out the pieces, whether it's an omnichannel marketing strategy, multi-platform content program or a new product design development. All along we track results, and make adjustments to ensure that you stay track to achieve your goals. Then of course, we can stick around to help you stay ahead of the curve and continue to evolve.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="good_company">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2 class="text-white">You're in <span>Good</span> Company</h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panopticon_cover">
+				<div class="pconc1"></div>
+				<div class="pconc2"></div>
+				<div class="pconc3"></div>
+				<div class="pconc4"></div>
+				<div class="pconc5"></div>
+				<div class="pconc6"></div>
+				<div class="pconc7"></div>
+				<div class="pconc8"></div>
+				<div class="panopticon_lgimg"></div>
+				<div class="panopticon_details">
+					<div class="pd_title"></div>
+					<div class="pd_info"></div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="container-fluid my-5" style="max-width: 1250px;">
+			<div class="row">
+				<div class="col">
+					<div class="logo_wrapper">
+						<img src="conde-nast.svg" alt="Conde Nast logo" class="img-fluid" />
+						<img src="costco.svg" alt="Costco logo" class="img-fluid" style="width:80%;" />
+						<img src="discovery.svg" alt="Discovery channel logo" class="img-fluid" />
+						<img src="lindblad-explorations.svg" alt="Lindblad Explorations logo" class="img-fluid" />
+						<img src="material-bank.svg" alt="Material Bank" class="img-fluid" />
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="leadership" class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h2 style="color:var(--gwred);">Leadership</h2>
+					<p class="text-white">We're experienced creators and operators who have built and managed top consumer brands from emerging startups to Fortune 100 powerhouses. Our unique approach is especially tuned to the growth needs of organizations that are expanding, and we love developing bold, original ideas and driving the plans that make them come to life.</p>
+				</div>
+				<div class="col-6 col-md-3 text-center">
+					<img src="mw.png" alt="Michael Wolfson" width="207" height="241" />
+					<h4 class="text-white">Michael Wolfson</h4>
+					<p class="text-white text-uppercase">CEO / Creative Director</p>
+				</div>
+				<div class="col-6 col-md-3 text-center">
+					<img src="lhg.png" alt="Lisa Harman Gooder" width="254" height="260" />
+					<h4 class="text-white">Lisa Harman Gooder</h4>
+					<p class="text-white text-uppercase">Strategy Director</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<img src="good-wolf-logo-footer.svg" alt="Good Wolf" width="75" height="64" />
+				</div>
+				<div class="col">
+					<h4 class="text-white">Good is only the beginning</h4>
+					button
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>&copy; <script>document.write(new Date().getFullYear())</script> GoodWolf. All rights reserved.</p>
+					<p>New York, NY</p>
+				</div>
+				<div class="col">
+					<ul>
+						<li><a href="#" target="_blank" rel="noopener nofollow">LinkedIn</a></li>
+						<li><a href="mailto:">Mail</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script>
+		const swiper = new Swiper('.opSwiper', {
+			slidesPerView: 1.3,
+			  spaceBetween: 30,
+			  centeredSlides: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			  },
+		});
+	</script>
+  </body>
+</html>
