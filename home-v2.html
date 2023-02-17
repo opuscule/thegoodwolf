@@ -30,25 +30,27 @@
 		html, body { background-color: #1E1E1E; font-family: var(--bodyFont); }
 		h1, h2, h3 { font-family: var(--headlineFont); text-transform: uppercase; }
 		
+		h2 { font-size: clamp(2rem, 1.1765rem + 3.1373vw, 4rem); }
+		
 		header h1 { color: var(--gwred); font-size: clamp(8rem, 3.0588rem + 18.8235vw, 20rem); line-height:0.75; }
-		header h1 span { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: url('pan-tn2.jpg'); background-size:cover; animation-duration: 8s;
+		header h1 span { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: url('wolf-banner-1.jpg'); background-size:cover; animation-duration: 8s;
 		  animation-name: wolfbg; animation-iteration-count: infinite; }
 			
 		@keyframes wolfbg {
-		  0% { background-image: url('pan-tn2.jpg'); }
-		  19% { background-image: url('pan-tn2.jpg'); }
-		  20% { background-image: url('pan-tn3.jpg'); }
-		  39% { background-image: url('pan-tn3.jpg'); }
-		  40% { background-image: url('pan-tn4.jpg'); }
-		  59% { background-image: url('pan-tn4.jpg'); }
-		  60% { background-image: url('pan-tn5.jpg'); }
-		  79% { background-image: url('pan-tn5.jpg'); }
-		  80% { background-image: url('pan-tn6.jpg'); }
-		  100% { background-image: url('pan-tn6.jpg'); }
+		  0% { background-image: url('wolf-banner-1.jpg'); }
+		  24% { background-image: url('wolf-banner-1.jpg'); }
+		  25% { background-image: url('wolf-banner-2.jpg'); }
+		  49% { background-image: url('wolf-banner-2.jpg'); }
+		  50% { background-image: url('wolf-banner-3.jpg'); }
+		  74% { background-image: url('wolf-banner-3.jpg'); }
+		  75% { background-image: url('wolf-banner-4.jpg'); }
+		  100% { background-image: url('wolf-banner-4.jpg'); }
 		}
 		
+		.wolf_top { width: 35%; }
+		
 		.whiteBG { background-color: var(--white); }
-		.top_headline h1 { position:relative; }
+		.top_headline h1 { position:relative; font-size: clamp(2rem, 1.1765rem + 3.1373vw, 4rem); }
 			.top_headline h1 span { color:var(--gwred); }
 			.top_headline h1::after { position:absolute; content:""; }
 		
@@ -82,7 +84,7 @@
 			fill: var(--darkblue);
 		}
 		.op_button-next { rotate: 180deg; }
-		
+		.op_count { color: var(--gwred); }
 		
 		#good_company h2 { position: relative; }
 			#good_company h2::after { position:absolute; content:""; }
@@ -91,7 +93,6 @@
 		
 		
 		.panopticon_cover { width: 100%; max-width: 112.5rem; display:grid; grid-template-columns: repeat(122, minmax(4px, 1fr)); grid-template-rows: repeat(58, minmax(4px, 1fr)); position: relative; aspect-ratio: 1466 / 687; }
-			/* .panopticon_cover::after { position: absolute; content:""; background-image:url('pan-cover.svg'); background-size: cover; top:0; left:0; width:100%; height:100%; } */
 		.panopticon_cover > div { background-size: cover; }
 		.panopticon_cover > a { cursor:pointer; }
 		
@@ -131,7 +132,23 @@
 			
 		.panopticon_lgimg { grid-column: 1 / 123; grid-row: 1 / 58; }
 		.panopticon_overlay { grid-column: 1 / 123; grid-row: 1 / 58; background-image: url('pan-cover.svg');  }
+		.panopticon_details { grid-column: 5 / 90; grid-row: 1 / 54; display:flex; align-items: flex-start; flex-direction: column; justify-content: flex-end; }
+		.pd_tag { border:1px solid #FFF; color:#FFF; padding: 0.25rem 0.75rem; border-radius:5rem; margin-right:0.75rem; float:left; }
 		
+		
+		
+		.panopticon_mobile { display: grid; grid-template-columns: repeat(59, minmax(4px, 1fr)); grid-template-rows: repeat(87, minmax(4px, 1fr)); position: relative; aspect-ratio: 355 / 518; }
+		.pm_ski { grid-column: 1 / 25; grid-row: 1 / 23; padding-right:0.25rem; }
+		.pm_books { grid-column: 25 / 60; grid-row: 1 / 23; }
+		.pm_bluprint { grid-column: 1 / 36; grid-row: 24 / 45; }
+		.pm_sothebys { grid-column: 37 / 60; grid-row: 24 / 45; }
+		.pm_chair { grid-column: 1 / 30; grid-row: 46 / 77; padding-left:0.25rem; }
+		.pm_cruise { grid-column: 30 / 60; grid-row: 46 / 62; padding-top: 0.5rem; padding-left: 0.2rem; }
+		.pm_dj { grid-column: 1 / 30; grid-row: 78 / 88; padding-right: 0.7rem; padding-bottom: 0.7rem; }
+		.pm_rights { grid-column: 30 / 60; grid-row: 62 / 88; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+		
+		.pancon_mobile_tag_wrapper { display:flex; gap:0.7rem; }
+		.pancon_mobile_tag_wrapper > div { padding:0.3rem 0.75rem; border:1px solid #222; border-radius: 5rem; }
 		
 		.logo_wrapper { display:grid; grid-template-columns: repeat(5, 1fr); align-items: center; justify-items: center; gap: 4%; }
 			.logo_wrapper img { opacity: 0.8; }
@@ -143,11 +160,21 @@
   <body>
 	  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX659MN"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<header>
+	<header class="py-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
 					<h1>GOOD<br><span>WOLF</span></h1>
+				</div>
+				<div class="col-md-5 d-flex flex-column justify-content-between">
+					<div class="header_right_top align-self-end">
+						<p class="mb-1"><a class="text-white" href="#contact">Contact Us</a></p>
+						<svg xmlns="http://www.w3.org/2000/svg" style="width:4rem; height:auto;" fill="none" viewBox="0 0 96 119"><path fill="#D6E5EB" d="M42.6205 42.691C44.461 35.6391 46.4452 28.7596 47.9464 21.6732C49.4476 14.5695 50.1525 7.20723 51.2881 0.000116975C52.1497 0.120814 52.463 0.586337 52.6066 1.44844C53.1157 4.62094 53.5986 7.81069 54.2252 10.9315C54.4732 12.1901 54.8779 13.604 54.8126 14.7074C54.6821 16.9144 55.9092 18.5007 55.8569 20.6559C55.8047 22.7594 56.366 24.8802 56.6402 27.0009C56.9143 29.1734 56.9535 31.3804 57.2537 33.5184C57.6061 36.1046 58.1283 38.6737 58.4677 41.3117C58.6374 41.2427 58.7418 41.1565 58.8593 41.1565C59.8775 41.0358 60.7129 40.7255 61.3395 39.3978C62.0053 37.984 63.4673 38.1047 64.4463 37.1047C65.7517 35.7598 67.279 34.8115 68.7279 33.708C71.2081 31.7942 73.7145 29.932 76.1947 28.0009C77.3956 27.0699 78.4791 25.8112 79.7583 25.225C80.646 24.8284 81.4162 23.9491 82.5257 24.0526C83.1654 24.1215 83.8442 23.2767 84.5229 22.9318C85.0582 22.656 85.6717 22.5698 86.0502 23.3112C86.4027 24.0008 86.0111 24.6043 85.6847 25.0181C84.1313 26.9837 83.0348 29.432 81.5728 31.4493C80.4763 32.9666 79.5234 34.6046 78.4138 36.0874C77.6567 37.1047 77.0301 38.2426 76.1947 39.2082C75.4637 40.053 74.9415 41.4841 74.1061 42.5186C72.9182 43.9842 71.9261 45.7084 70.8687 47.3464C69.6939 49.1568 68.5452 50.9844 67.3703 52.7948C67.2137 53.0362 66.9526 53.1914 66.4957 53.6052C68.1927 53.5707 69.6025 53.5017 71.0254 53.6569C72.8399 53.8638 74.6674 53.9328 76.4819 54.0535C80.0325 54.2604 83.5178 55.2604 87.0554 55.6052C88.9873 55.7949 91.0237 55.7087 92.9165 56.6915C93.2298 56.8639 93.6475 56.7604 94.013 56.6915C95.7361 56.3466 96.2322 57.0018 95.9058 59.2777C95.8667 59.5364 95.8275 59.8122 95.7753 60.1226C93.517 60.2778 91.4545 61.433 89.3659 62.3813C88.3216 62.8641 87.2381 63.002 86.2199 63.1227C84.3402 63.3296 82.8651 64.7089 81.1812 65.4503C79.7714 66.0711 78.4269 67.0711 76.9126 66.9504C75.0198 66.8125 73.3881 68.1228 71.5606 68.3642C70.7382 68.4677 69.8767 68.5366 68.9237 68.7953C73.6361 78.9163 78.9751 88.2441 84.2619 97.7272C83.4003 97.1237 82.3821 98.2272 81.7295 97.3306C80.7896 96.0547 79.4842 95.7099 78.453 94.6409C76.7299 92.865 74.7457 91.5891 72.9965 89.7959C71.5214 88.2786 70.0333 86.5544 68.3233 85.7096C66.078 84.6061 64.3941 82.4336 62.3055 81.106C61.6659 80.6922 61.0001 80.2439 60.7652 79.2094C60.6607 78.7783 60.3213 78.5542 60.1125 78.6059C59.2118 78.7956 58.5982 78.1231 57.9194 77.3817C57.567 80.8991 57.1754 84.2613 56.8882 87.6234C56.5619 91.5891 56.1963 95.5375 55.7656 99.4686C55.6089 100.865 55.0737 102.02 54.8388 103.348C54.7082 104.107 54.6691 104.986 54.6168 105.658C54.3949 108.538 53.6117 111.159 53.0373 113.866C52.6849 115.521 52.0583 117.038 51.249 118.642C50.3091 117.59 50.1002 116.176 49.9044 114.9C48.9907 108.865 48.09 102.848 46.5888 96.9858C46.1189 95.1581 45.8839 93.1063 45.6489 91.1235C45.5184 90.0201 44.8918 88.7097 44.7743 87.5027C44.5263 84.9854 43.717 82.675 43.4559 80.1922C43.3906 79.6232 43.1948 79.0542 42.8685 78.6576C33.4567 85.2613 24.4105 92.6925 15.1815 99.5548C14.3199 98.2272 14.4635 95.7444 15.2598 94.5719C16.5782 92.6063 17.8836 90.6063 18.8365 88.2786C19.1368 87.5372 19.9983 86.7613 20.6119 86.4337C20.8599 86.313 20.899 85.9337 20.8599 85.5372C20.6902 83.8475 22.348 81.5026 23.6534 81.5888C23.9144 80.2956 24.2147 79.0197 25.3504 78.5714C25.4548 78.5197 25.5853 78.4507 25.6506 78.33C27.0212 75.8645 28.4963 73.5196 29.9192 71.1229C30.2455 70.5884 30.4283 69.847 30.8851 69.3125C31.0809 69.0884 31.1723 68.278 30.4544 68.1056C26.9299 67.278 23.4054 66.3642 19.8678 65.6745C18.4841 65.3986 17.0482 64.9331 15.6645 64.5193C14.5288 64.1745 13.0537 64.3814 11.7353 64.3124C10.3386 64.2434 8.95486 63.8124 7.57116 63.3986C5.60005 62.8123 3.65504 62.0365 1.67087 61.5364C1.14872 61.3985 0.704896 61.0882 0.313284 60.5709C0.0522091 60.1916 -5.83771e-06 59.8812 -5.88567e-06 59.3984C-5.96275e-06 58.6226 0.469929 58.7605 0.770165 58.6743C5.28676 57.3639 9.88167 56.6225 14.4635 55.7949C17.727 55.2087 21.0165 54.9845 24.2669 54.2431C25.2068 54.0362 26.2641 53.6052 27.3084 53.9845C27.7522 54.1397 28.1047 53.8983 28.5094 53.5017C29.3448 52.7086 30.4935 53.2948 31.4726 52.5534C31.5509 52.2948 31.4203 52.0362 31.2245 51.7086C30.0497 49.7775 28.7704 47.9153 27.8045 45.8118C26.5905 43.1738 24.776 41.2082 23.5881 38.553C23.2356 37.7599 22.2958 37.415 21.7867 36.5529C21.3298 35.7943 20.5074 35.3977 20.8599 34.0011C21.0165 33.3632 20.155 33.1908 19.8025 32.708C18.5755 31.0355 17.8967 28.8631 16.6827 27.1906C16.4085 26.8113 16.2519 26.2423 15.9517 25.8974C15.0248 24.8802 14.581 23.6905 14.9204 22.0525C16.3041 20.6559 17.6748 21.949 18.7582 22.7939C20.2333 23.9664 21.7867 25.0009 23.1573 26.3802C24.5149 27.7596 26.1727 28.4665 27.5303 29.7769C30.8329 32.9494 34.4358 35.5357 37.7122 38.7771C39.2395 40.2772 40.9104 41.4841 42.6205 42.7083L42.6205 42.691Z"/></svg>
+					</div>
+					<div class="header_right_bottom">
+						<img src="wolf-top.svg" alt="Good Wolf logo icon" class="wolf_top" />
+						<h2 class="text-white text-uppercase fs-1 lh-1 mt-4">Ideas &amp;<br>change</h2>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -164,22 +191,26 @@
 			<div class="container servicesmo">
 				<div class="row">
 					<div class="col">
-						<h2>Services</h2>
+						<h2 style="color:var(--gwred);">Services</h2>
 						<div class="d-none d-md-flex align-items-start">
 						  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-							<button class="nav-link active" id="strat_innov-tab" data-bs-toggle="pill" data-bs-target="#strat_innov" type="button" role="tab" aria-controls="strat_innov" aria-selected="true">Strategy &amp; Innovation</button>
-							<button class="nav-link" id="prod_design-tab" data-bs-toggle="pill" data-bs-target="#prod_design" type="button" role="tab" aria-controls="prod_design" aria-selected="false">Product &amp; Design</button>
-							<button class="nav-link" id="creative_content-tab" data-bs-toggle="pill" data-bs-target="#creative_content" type="button" role="tab" aria-controls="creative_content" aria-selected="false">Creative &amp; Content</button>
-							<button class="nav-link" id="growth_mark-tab" data-bs-toggle="pill" data-bs-target="#growth_mark" type="button" role="tab" aria-controls="growth_mark" aria-selected="false">Growth &amp; Marketing</button>
+							<button class="nav-link active fs-2" id="strat_innov-tab" data-bs-toggle="pill" data-bs-target="#strat_innov" type="button" role="tab" aria-controls="strat_innov" aria-selected="true">Strategy &amp; Innovation</button>
+							<button class="nav-link fs-2" id="prod_design-tab" data-bs-toggle="pill" data-bs-target="#prod_design" type="button" role="tab" aria-controls="prod_design" aria-selected="false">Product &amp; Design</button>
+							<button class="nav-link fs-2" id="creative_content-tab" data-bs-toggle="pill" data-bs-target="#creative_content" type="button" role="tab" aria-controls="creative_content" aria-selected="false">Creative &amp; Content</button>
+							<button class="nav-link fs-2" id="growth_mark-tab" data-bs-toggle="pill" data-bs-target="#growth_mark" type="button" role="tab" aria-controls="growth_mark" aria-selected="false">Growth &amp; Marketing</button>
 						  </div>
 						  <div class="tab-content" id="v-pills-tabContent">
-							<div class="tab-pane fade show active" id="strat_innov" role="tabpanel" aria-labelledby="strat_innov-tab" tabindex="0"><p>Strategy is our sweet spot, and our work begins here. We start by understanding the lay of the land – your audience, competitors, comparables, pain points, and objectives – and developing a game plan to chart where you need to go and how to get there.</p></div>
-							<div class="tab-pane fade" id="prod_design" role="tabpanel" aria-labelledby="prod_design-tab" tabindex="0"><p>Since the early days of the web through today, we’ve created some of the Internet’s best-known consumer experiences. From ground up brand building and identity to a website UX/ UI refresh or production design, we can help you reach the next evolution.</p></div>
-							<div class="tab-pane fade" id="creative_content" role="tabpanel" aria-labelledby="creative_content-tab" tabindex="0"><p>Creative storytelling, engaging content, and bold design capabilities designed to hook your audience and keep them coming back. Created by award winning creators, producers and editors across every platform including articles, social, video and pods.</p></div>
-							<div class="tab-pane fade" id="growth_mark" role="tabpanel" aria-labelledby="growth_mark-tab" tabindex="0"><p>From hyper-focused lead gen to powerful brand awareness, we target customers across every touchpoint -- whether your goal is to get in front of new customers or deepen engagement with the ones you have.</p></div>
+							<div class="tab-pane fade show active" id="strat_innov" role="tabpanel" aria-labelledby="strat_innov-tab" tabindex="0"><p class="fs-4">Strategy is our sweet spot, and our work begins here. We start by understanding the lay of the land – your audience, competitors, comparables, pain points, and objectives – and developing a game plan to chart where you need to go and how to get there.</p></div>
+							<div class="tab-pane fade" id="prod_design" role="tabpanel" aria-labelledby="prod_design-tab" tabindex="0"><p class="fs-4">Since the early days of the web through today, we’ve created some of the Internet’s best-known consumer experiences. From ground up brand building and identity to a website UX/ UI refresh or production design, we can help you reach the next evolution.</p></div>
+							<div class="tab-pane fade" id="creative_content" role="tabpanel" aria-labelledby="creative_content-tab" tabindex="0"><p class="fs-4">Creative storytelling, engaging content, and bold design capabilities designed to hook your audience and keep them coming back. Created by award winning creators, producers and editors across every platform including articles, social, video and pods.</p></div>
+							<div class="tab-pane fade" id="growth_mark" role="tabpanel" aria-labelledby="growth_mark-tab" tabindex="0"><p class="fs-4">From hyper-focused lead gen to powerful brand awareness, we target customers across every touchpoint -- whether your goal is to get in front of new customers or deepen engagement with the ones you have.</p></div>
 						  </div>
 						</div>
 						
+						<style>
+							h2.accordion-header { font-family: var(--bodyFont); }
+							#strat-innov-heading { background-color: #E8EAEC !important; color: var(--gwblack); }
+						</style>
 						
 						<div class="d-block d-md-none accordion accordion-flush" id="servicesAccordion">
 						  <div class="accordion-item">
@@ -231,9 +262,9 @@
 		</section>
 		<section class="whiteBG py-5" id="our-process">
 			<div class="op_container">
-				<h2 class="d-none d-block-md">Our Process</h2>
+				<h2 class="d-none d-block-md" style="color:var(--gwred);">Our Process</h2>
 				<div class="op_controls">
-					<h2 class="d-block d-none-md">Our Process</h2>
+					<h2 class="d-block d-none-md" style="color:var(--gwred);">Our Process</h2>
 					
 					<div class="d-flex align-items-center">
 						<div class="op_button-prev me-5">
@@ -250,23 +281,23 @@
 						<div class="swiper-wrapper">
 							<div class="op_each swiper-slide">
 								<p class="op_count">01</p>
-								<h4>Discovery</h4>
-								<p>The foundation of every great strategy begins with a good look under the hood. We begin by evaluating the current state of your business and market position, diving into every aspect, from your target audience, competition and comparables, to current market trends and opportunities. Don't worry, we pay close attention to what's working, as well as what isn't, to make sure we don't throw the baby out with the bathwater.</p>
+								<h4 class="fs-2">Discovery</h4>
+								<p class="fs-4">The foundation of every great strategy begins with a good look under the hood. We begin by evaluating the current state of your business and market position, diving into every aspect, from your target audience, competition and comparables, to current market trends and opportunities. Don't worry, we pay close attention to what's working, as well as what isn't, to make sure we don't throw the baby out with the bathwater.</p>
 							</div>
 							<div class="op_each swiper-slide">
 								<p class="op_count">02</p>
-								<h4>Idea Generation</h4>
-								<p>Here's the fun part. The GoodWolf Ideas Lab is where innovation and creative projects are born. Our award-winning creatives identify the angles and stories that can effectively communicate your core value and make you stand out in a crowded market. Our approach is 360 and we love to uncover new and effective ways to extend your brand to meet consumers where they are… and in ways that trigger action.</p>
+								<h4 class="fs-2">Idea Generation</h4>
+								<p class="fs-4">Here's the fun part. The GoodWolf Ideas Lab is where innovation and creative projects are born. Our award-winning creatives identify the angles and stories that can effectively communicate your core value and make you stand out in a crowded market. Our approach is 360 and we love to uncover new and effective ways to extend your brand to meet consumers where they are… and in ways that trigger action.</p>
 							</div>
 							<div class="op_each swiper-slide">
 								<p class="op_count">03</p>
-								<h4>Strategic Planning</h4>
-								<p>Armed with our research and fresh ideas (never one size fits all) we get to work on a clear strategic plan that outlines the steps needed to achieve your business objectives and goals. This plan usually includes a detailed marketing strategy, budget, and timeline for implementation with natural GO points for you to "greenlight" new projects and initiatives.</p>
+								<h4 class="fs-2">Strategic Planning</h4>
+								<p class="fs-4">Armed with our research and fresh ideas (never one size fits all) we get to work on a clear strategic plan that outlines the steps needed to achieve your business objectives and goals. This plan usually includes a detailed marketing strategy, budget, and timeline for implementation with natural GO points for you to "greenlight" new projects and initiatives.</p>
 							</div>
 							<div class="op_each swiper-slide">
 								<p class="op_count">04</p>
-								<h4>Execution &amp; Delivery</h4>
-								<p>Next comes making the dream a reality. We work closely with your team to roll out the pieces, whether it's an omnichannel marketing strategy, multi-platform content program or a new product design development. All along we track results, and make adjustments to ensure that you stay track to achieve your goals. Then of course, we can stick around to help you stay ahead of the curve and continue to evolve.</p>
+								<h4 class="fs-2">Execution &amp; Delivery</h4>
+								<p class="fs-4">Next comes making the dream a reality. We work closely with your team to roll out the pieces, whether it's an omnichannel marketing strategy, multi-platform content program or a new product design development. All along we track results, and make adjustments to ensure that you stay track to achieve your goals. Then of course, we can stick around to help you stay ahead of the curve and continue to evolve.</p>
 							</div>
 						</div>
 					</div>
@@ -282,32 +313,179 @@
 				</div>
 			</div>
 			
-			<div class="panopticon_cover mx-auto">
-				<div class="pconc1"></div>
-				<div class="pconc2"></div>
-				<div class="pconc3"></div>
-				<div class="pconc4"></div>
-				<div class="pconc5"></div>
-				<div class="pconc6"></div>
-				<div class="pconc7"></div>
-				<div class="pconc8"></div>
-				<div class="panopticon_lgimg"></div>
-				<div class="panopticon_overlay"></div>
-				<div class="panopticon_details">
-					<div class="pd_title"></div>
-					<div class="pd_info"></div>
+			<div class="d-none d-sm-block">
+				<div class="panopticon_cover mx-auto">
+					<div class="pconc1"></div>
+					<div class="pconc2"></div>
+					<div class="pconc3"></div>
+					<div class="pconc4"></div>
+					<div class="pconc5"></div>
+					<div class="pconc6"></div>
+					<div class="pconc7"></div>
+					<div class="pconc8"></div>
+					<div class="panopticon_lgimg"></div>
+					<div class="panopticon_overlay"></div>
+					<div class="panopticon_details">
+						<div class="pd_title"><h3 class="text-white"></h3></div>
+						<div class="pd_info"></div>
+					</div>
+					
+					<a class="apconcall" id="apconc1" data-image="pan-lg1.jpeg" data-name="Ski Project" data-tags="UI/UX,Visual Design,Strategy"></a>
+					<a class="apconcall" id="apconc2" data-image="pan-lg2.jpeg" data-name="Bookshelf" data-tags="Creative,Growth"></a>
+					<a class="apconcall" id="apconc3" data-image="pan-lg3.jpeg" data-name="Interior Design" data-tags="Visual Design,Analysis"></a>
+					<a class="apconcall" id="apconc4" data-image="pan-lg4.jpeg" data-name="Cruise Ship" data-tags="UI/UX,Marketing"></a>
+					<a class="apconcall" id="apconc5" data-image="pan-lg5.jpeg" data-name="bluprint" data-tags="UI/UX,Development,Product"></a>
+					<a class="apconcall" id="apconc6" data-image="pan-lg6.jpeg" data-name="Sotheby's" data-tags="Growth,Marketing,Strategy"></a>
+					<a class="apconcall" id="apconc7" data-image="pan-lg7.jpeg" data-name="Dance Party" data-tags="UI/UX"></a>
+					<a class="apconcall" id="apconc8" data-image="pan-lg8.jpeg" data-name="The Rights" data-tags="Visual Design,Development"></a>
 				</div>
-				
-				<a class="apconcall" id="apconc1" data-bg="pan-lg1.jpg"></a>
-				<a class="apconcall" id="apconc2"></a>
-				<a class="apconcall" id="apconc3"></a>
-				<a class="apconcall" id="apconc4"></a>
-				<a class="apconcall" id="apconc5"></a>
-				<a class="apconcall" id="apconc6"></a>
-				<a class="apconcall" id="apconc7"></a>
-				<a class="apconcall" id="apconc8"></a>
 			</div>
+			
+			<div class="d-block d-sm-none">
+				<div class="panopticon_mobile">
+					
+					<!-- Button trigger modal -->
+					<img src="pancon-mobile-ski.png" type="button" class="img-fluid pm_ski" data-bs-toggle="modal" data-bs-target="#skiModal" alt="Ski" />
+					<img src="pancon-mobile-books.png" type="button" class="img-fluid pm_books" data-bs-toggle="modal" data-bs-target="#booksModal" alt="Bookshelf" />
+					<img src="pancon-mobile-bluprint.png" type="button" class="img-fluid pm_bluprint" data-bs-toggle="modal" data-bs-target="#bluprintModal" alt="Mural of bluprint on wall" />
+					<img src="pancon-mobile-sothebys.png" type="button" class="img-fluid pm_sothebys" data-bs-toggle="modal" data-bs-target="#sothebysModal" alt="Sotheby's Auction" />
+					<img src="pancon-mobile-chair.png" type="button" class="img-fluid pm_chair" data-bs-toggle="modal" data-bs-target="#chairModal" alt="Interior Design" />
+					<img src="pancon-mobile-cruise.png" type="button" class="img-fluid pm_cruise" data-bs-toggle="modal" data-bs-target="#cruiseModal" alt="Cruise Ship" />
+					<img src="pancon-mobile-dj.png" type="button" class="img-fluid pm_dj" data-bs-toggle="modal" data-bs-target="#djModal" alt="DJ Booth" />
+					<img src="pancon-mobile-rights.png" type="button" class="img-fluid pm_rights" data-bs-toggle="modal" data-bs-target="#rightsModal" alt="Recording Studio" />
+
+				</div>
+			</div>
+			
 		</section>
+		
+		
+		<div class="modal fade" id="skiModal" tabindex="-1" aria-labelledby="skiModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg1.jpeg" class="img-fluid" alt="Ski Project" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="skiModalLabel">Ski Project</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>UI/UX</div>
+					<div>Strategy</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="booksModal" tabindex="-1" aria-labelledby="booksModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg2.jpeg" class="img-fluid" alt="Bookshelf" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="booksModalLabel">Bookshelf</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>Visual Design</div>
+					<div>Development</div>
+					<div>Marketing</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		<div class="modal fade" id="bluprintModal" tabindex="-1" aria-labelledby="bluprintModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg5.jpeg" class="img-fluid" alt="bluprint mural on wall" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="bluprintModalLabel">bluprint</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>Strategy</div>
+					<div>Growth</div>
+					<div>Visual Design</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="sothebysModal" tabindex="-1" aria-labelledby="sothebysModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg6.jpeg" class="img-fluid" alt="Sotheby's Auction" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="sothebysModalLabel">Sotheby's</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>Strategy</div>
+					<div>Growth</div>
+					<div>Visual Design</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="chairModal" tabindex="-1" aria-labelledby="chairModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg3.jpeg" class="img-fluid" alt="Interior Design" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="chairModalLabel">Interior Design</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>UI/UX</div>
+					<div>Visual Design</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="cruiseModal" tabindex="-1" aria-labelledby="cruiseModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg4.jpeg" class="img-fluid" alt="Cruise Ship" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="cruiseModalLabel">Cruise Ship</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>Strategy</div>
+					<div>Visual Design</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="djModal" tabindex="-1" aria-labelledby="djModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg7.jpeg" class="img-fluid" alt="DJ Booth" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="djModalLabel">DJ Booth</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>Marketing</div>
+					<div>UX/UI</div>
+					<div>Growth Strategy</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="modal fade" id="rightsModal" tabindex="-1" aria-labelledby="rightsModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-body">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  <img src="pan-lg8.jpeg" class="img-fluid" alt="Recording Studio" />
+				<h3 class="modal-title fs-2 mt-3 mb-2" id="rightsModalLabel">Recording Studio</h3>
+				<div class="pancon_mobile_tag_wrapper mb-3">
+					<div>UX/UI</div>
+					<div>Visual Design</div>
+					<div>Development</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
 		
 		<section class="container-fluid my-5" style="max-width: 1250px;">
 			<div class="row">
@@ -329,14 +507,14 @@
 					<h2 style="color:var(--gwred);">Leadership</h2>
 					<p class="text-white">We're experienced creators and operators who have built and managed top consumer brands from emerging startups to Fortune 100 powerhouses. Our unique approach is especially tuned to the growth needs of organizations that are expanding, and we love developing bold, original ideas and driving the plans that make them come to life.</p>
 				</div>
-				<div class="col-6 col-md-3 offset-md-1 text-center">
-					<img src="mw.png" alt="Michael Wolfson" width="207" height="241" />
-					<h4 class="text-white">Michael Wolfson</h4>
+				<div class="col-6 col-md-3 offset-md-1">
+					<img src="mw.png" alt="Michael Wolfson" width="254" height="260" class="img-fluid" />
+					<h4 class="text-white fw-normal mt-3">Michael Wolfson</h4>
 					<p class="text-white text-uppercase">CEO / Creative Director</p>
 				</div>
-				<div class="col-6 col-md-3 text-center">
-					<img src="lhg.png" alt="Lisa Harman Gooder" width="254" height="260" />
-					<h4 class="text-white">Lisa Harman Gooder</h4>
+				<div class="col-6 col-md-3">
+					<img src="lhg.png" alt="Lisa Harman Gooder" width="254" height="260" class="img-fluid" />
+					<h4 class="text-white fw-normal mt-3">Lisa Harman Gooder</h4>
 					<p class="text-white text-uppercase">Strategy Director</p>
 				</div>
 			</div>
@@ -349,7 +527,7 @@
 				<div class="col">
 					<img src="good-wolf-logo-footer.svg" alt="Good Wolf" width="75" height="64" />
 				</div>
-				<div class="col">
+				<div class="col" id="contact">
 					<h4 class="text-white">Good is only the beginning</h4>
 					button
 				</div>
@@ -370,20 +548,33 @@
 	</footer>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<script>
-		const swiper = new Swiper('.opSwiper', {
-			slidesPerView: 1.3,
-			  spaceBetween: 30,
-			  centeredSlides: false,
-			// navigation: {
-			// 	nextEl: '.swiper-button-next',
-			// 	prevEl: '.swiper-button-prev',
-			//   },
-			  navigation: {
-				  nextEl: '.op_button-next',
-				  prevEl: '.op_button-prev',
+		const swiper = new Swiper('.opSwiper', { slidesPerView: 1.3, spaceBetween: 30, centeredSlides: false, navigation: { nextEl: '.op_button-next', prevEl: '.op_button-prev', }, });
+		$(document).ready(function(){
+			
+			$('.apconcall').hover(
+				function(index, element) {
+					$('.panopticon_lgimg').css("background-image", "url(" + $(this).data('image') + ")");
+					$('.pd_title h3').html($(this).data('name'));
+					var tagsArray = $(this).data('tags').split(',');
+					
+					
+					jQuery.each(tagsArray, function(index, item) {
+						// do something with `item` (or `this` is also `item` if you like)
+						$('.pd_info').append('<div class="pd_tag">'+item+'</div>');
+					});
+					
+					
 				},
+				function(index, element) {
+					$('.panopticon_lgimg').css("background-image", "none");
+					$('.pd_title h3').empty();
+					$('.pd_info').empty();
+				  }
+			);
+			
 		});
 	</script>
   </body>
