@@ -99,9 +99,7 @@
 		.pconc1 { background-image: url('pan-tn1.jpg');  }
 		.pconc1,
 		#apconc1 { grid-column: 1 / 32; grid-row: 1 / 30; padding-right:0.4vw; }
-		/* .pconc1 ~ #apconc1:hover ~ .panopticon_lgimg {
-		  background-image: url('pan-lg1.jpg');
-		} */
+	
 		
 		.pconc2 { background-image: url('pan-tn2.jpg'); }
 		.pconc2,
@@ -150,7 +148,10 @@
 		.pancon_mobile_tag_wrapper { display:flex; gap:0.7rem; }
 		.pancon_mobile_tag_wrapper > div { padding:0.3rem 0.75rem; border:1px solid #222; border-radius: 5rem; }
 		
-		.logo_wrapper { display:grid; grid-template-columns: repeat(5, 1fr); align-items: center; justify-items: center; gap: 4%; }
+		/* .logo_wrapper { display:grid; grid-template-columns: repeat(5, 1fr); align-items: center; justify-items: center; gap: 4%; } */
+		.logo_wrapper {
+			overflow: hidden;
+		}
 			.logo_wrapper img { opacity: 0.8; }
 			.logo_wrapper svg { width: 100%; height:auto; }
 		
@@ -219,8 +220,18 @@
 						</div>
 						
 						<style>
+							.accordion-flush .accordion-item { border-width: 0 !important; }
 							h2.accordion-header { font-family: var(--bodyFont); }
-							#strat-innov-heading { background-color: #E8EAEC !important; color: var(--gwblack); }
+							#strat-innov-heading { transform: rotate(-1deg); z-index: 3 }
+								#strat-innov-heading button { background-color: #E8EAEC !important; color: var(--gwblack); }
+							#prod-design-heading { transform: rotate(-2.4deg); z-index: 4; }
+								#prod-design-heading button { background-color: var(--gwred); color: var(--white); }
+							
+							#creative-cont-heading { transform: rotate(1.125deg); z-index: 2 }
+								#creative-cont-heading button { background-color: var(--darkblue); color: var(--white); }
+							
+							#growth-heading { transform: rotate(-1.25deg); z-index: 1; }
+								#growth-heading button { background-color: var(--lightblue); color: var(--gwblack); }
 						</style>
 						
 						<div class="d-block d-md-none accordion accordion-flush" id="servicesAccordion">
@@ -290,22 +301,22 @@
 				<div class="op_content">
 					<div id="op_content_wrapper" class="swiper opSwiper">
 						<div class="swiper-wrapper">
-							<div class="op_each swiper-slide">
+							<div class="op_each px-4 swiper-slide">
 								<p class="op_count">01</p>
 								<h4 class="fs-2">Discovery</h4>
 								<p class="fs-4">The foundation of every great strategy begins with a good look under the hood. We begin by evaluating the current state of your business and market position, diving into every aspect, from your target audience, competition and comparables, to current market trends and opportunities. Don't worry, we pay close attention to what's working, as well as what isn't, to make sure we don't throw the baby out with the bathwater.</p>
 							</div>
-							<div class="op_each swiper-slide">
+							<div class="op_each px-4 swiper-slide">
 								<p class="op_count">02</p>
 								<h4 class="fs-2">Idea Generation</h4>
 								<p class="fs-4">Here's the fun part. The GoodWolf Ideas Lab is where innovation and creative projects are born. Our award-winning creatives identify the angles and stories that can effectively communicate your core value and make you stand out in a crowded market. Our approach is 360 and we love to uncover new and effective ways to extend your brand to meet consumers where they are… and in ways that trigger action.</p>
 							</div>
-							<div class="op_each swiper-slide">
+							<div class="op_each px-4 swiper-slide">
 								<p class="op_count">03</p>
 								<h4 class="fs-2">Strategic Planning</h4>
 								<p class="fs-4">Armed with our research and fresh ideas (never one size fits all) we get to work on a clear strategic plan that outlines the steps needed to achieve your business objectives and goals. This plan usually includes a detailed marketing strategy, budget, and timeline for implementation with natural GO points for you to "greenlight" new projects and initiatives.</p>
 							</div>
-							<div class="op_each swiper-slide">
+							<div class="op_each px-4 swiper-slide">
 								<p class="op_count">04</p>
 								<h4 class="fs-2">Execution &amp; Delivery</h4>
 								<p class="fs-4">Next comes making the dream a reality. We work closely with your team to roll out the pieces, whether it's an omnichannel marketing strategy, multi-platform content program or a new product design development. All along we track results, and make adjustments to ensure that you stay track to achieve your goals. Then of course, we can stick around to help you stay ahead of the curve and continue to evolve.</p>
@@ -497,26 +508,38 @@
 		  </div>
 		</div>
 		
-		
-		<section class="container-fluid my-5" style="max-width: 1250px;">
-			<div class="row">
-				<div class="col">
-					<div class="logo_wrapper">
-						<img src="conde-nast.svg" alt="Conde Nast logo" class="img-fluid" />
-						<img src="costco.svg" alt="Costco logo" class="img-fluid" style="width:80%;" />
-						<img src="discovery.svg" alt="Discovery channel logo" class="img-fluid" />
-						<img src="lindblad-explorations.svg" alt="Lindblad Explorations logo" class="img-fluid" />
-						<img src="material-bank.svg" alt="Material Bank" class="img-fluid" />
+
+					<div class="logo_wrapper my-5">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide logo2up d-flex flex-column align-items-center justify-content-evenly">
+								<img src="conde-nast.svg" alt="Conde Nast logo" class="img-fluid py-3" style="width:clamp(9.3125rem, 6.739rem + 9.8039vw, 15.5625rem);" />
+								<img src="legendary.svg" alt="Legendary" class="img-fluid py-3" style="width: clamp(7.7625rem, 5.6316rem + 8.1176vw, 12.9375rem);" />
+							</div>
+							<div class="swiper-slide logo2up d-flex flex-column align-items-center justify-content-evenly">
+								<img src="costco.svg" alt="Costco logo" class="img-fluid py-3" style="width:clamp(5.390625rem, 3.9108rem + 5.6373vw, 8.984375rem);" />
+								<img src="aol.svg" alt="AOL logo" class="img-fluid py-3" style="width:clamp(3.75rem, 2.7206rem + 3.9216vw, 6.25rem);" />
+							</div>
+							<div class="swiper-slide logo2up d-flex flex-column align-items-center justify-content-evenly">
+								<img src="discovery.svg" alt="Discovery channel logo" class="img-fluid py-3" style="width:clamp(7.359375rem, 5.3392rem + 7.6961vw, 12.265625rem);" />
+								<img src="the-rights.svg" alt="The Rights logo" class="img-fluid py-3" style="width: clamp(7.375rem, 5.353rem + 7.7029vw, 12.285625rem);" />
+							</div>
+							<div class="swiper-slide logo2up d-flex flex-column align-items-center justify-content-evenly">
+								<img src="lindblad-explorations.svg" alt="Lindblad Explorations logo" class="img-fluid py-3" style="width: clamp(6.5rem, 4.7158rem + 6.7971vw, 10.833125rem);;"/>
+								<img src="nhl.svg" alt="NHL logo" class="img-fluid py-3" style="width: clamp(2.64375rem, 1.918rem + 2.7647vw, 4.40625rem);" />
+							</div>
+							<div class="swiper-slide logo2up d-flex flex-column align-items-center justify-content-evenly">
+								<img src="material-bank.svg" alt="Material Bank" class="img-fluid py-3" style="width: clamp(5.594375rem, 4.0585rem + 5.851vw, 9.324375rem);" />
+								<img src="theknot.svg" alt="The Knot logo" class="img-fluid py-3" style="width: clamp(5.175rem, 3.4664rem + 6.5088vw, 9.324375rem);" />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</section>
+	
 		
-		<section id="leadership" class="container mb-5">
+		<section id="leadership" class="container mb-5 pt-5">
 			<div class="row">
 				<div class="col-md-5">
 					<h2 style="color:var(--gwred);">Leadership</h2>
-					<p class="text-white">We're experienced creators and operators who have built and managed top consumer brands from emerging startups to Fortune 100 powerhouses. Our unique approach is especially tuned to the growth needs of organizations that are expanding, and we love developing bold, original ideas and driving the plans that make them come to life.</p>
+					<p class="text-white fs-4">We're experienced creators and operators who have built and managed top consumer brands from emerging startups to Fortune 100 powerhouses. Our unique approach is especially tuned to the growth needs of organizations that are expanding, and we love developing bold, original ideas and driving the plans that make them come to life.</p>
 				</div>
 				<div class="col-6 col-md-3 offset-md-1">
 					<img src="mw.png" alt="Michael Wolfson" width="254" height="260" class="img-fluid" />
@@ -532,7 +555,7 @@
 		</section>
 	</main>
 	
-	<footer id="footer">
+	<footer id="footer" class="pb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -568,8 +591,56 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<style>
+		@media (max-width:575px) {
+			.logo2up { width: 35vw; }
+		}
+	</style>
 	<script>
-		const swiper = new Swiper('.opSwiper', { slidesPerView: 1.3, spaceBetween: 30, centeredSlides: false, navigation: { nextEl: '.op_button-next', prevEl: '.op_button-prev', }, });
+		const swiper = new Swiper('.opSwiper', { 
+			slidesPerView: 1,
+			spaceBetween: 10, 
+			centeredSlides: false, 
+			navigation: { nextEl: '.op_button-next', prevEl: '.op_button-prev', }, 
+			breakpoints: {
+				575: {
+				  slidesPerView: 2.5,
+				  spaceBetween: 20,
+				},
+				768: {
+				  slidesPerView: 1.5,
+				  spaceBetween: 20,
+				},
+				992: {
+				  slidesPerView: 2.5,
+				  spaceBetween: 20,
+				}
+			  },
+		});
+		
+		const swiperlogos = new Swiper('.logo_wrapper', {
+			slidesPerView: "auto",
+			centeredSlides: false,
+			spaceBetween: 10,
+			// centeredSlides: false,
+			// slidesPerView: 2.5,
+			// spaceBetween: 15,
+			// breakpoints: {
+			// 	575: {
+			// 	  slidesPerView: 3.5,
+			// 	  spaceBetween: 20,
+			// 	},
+			// 	768: {
+			// 	  slidesPerView: 4.5,
+			// 	  spaceBetween: 20,
+			// 	},
+			// 	992: {
+			// 	  slidesPerView: 5,
+			// 	  spaceBetween: 20,
+			// 	}
+			//   },
+		});
+		
 		$(document).ready(function(){
 			
 			$('.apconcall').hover(
