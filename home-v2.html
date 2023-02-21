@@ -59,16 +59,16 @@
 		}
 		
 		.whiteBG { background-color: var(--white); }
-		.top_headline h1 { position:relative; font-size: clamp(2rem, 1.1765rem + 3.1373vw, 4rem); }
+		.top_headline h1 { position:relative; font-size: clamp(2rem, 1.1765rem + 3.1373vw, 4rem); line-height: 1.05; }
 			.top_headline h1 span { color:var(--gwred); }
 			.top_headline h1::after { position:absolute; content:""; }
 		
 		#v-pills-tab { min-width:50%; }
 		.nav-pills .nav-link { border-radius:0 !important; text-align: left; padding-top: 1rem; padding-bottom: 1rem; }
-		#strat_innov-tab { background-color: #E8EAEC; color: var(--gwblack); transform: rotate(-1deg); z-index: 3;}
-		#prod_design-tab { background-color: var(--gwred); color: var(--white); transform: rotate(-3deg); z-index: 4; }
+		#strat_innov-tab { background-color: #E8EAEC; color: var(--gwblack); transform: rotate(-0.7deg); z-index: 3;}
+		#prod_design-tab { background-color: var(--gwred); color: var(--white); transform: rotate(-2.5deg); z-index: 4; }
 		#creative_content-tab { background-color: var(--darkblue); color: var(--white); transform: rotate(1deg); z-index: 2;}
-		#growth_mark-tab { background-color: var(--lightblue); color: var(--gwblack); transform: rotate(-2deg); z-index: 1;}
+		#growth_mark-tab { background-color: var(--lightblue); color: var(--gwblack); transform: rotate(-1.5deg); z-index: 1;}
 		
 		.accordion-flush .accordion-item { border-width: 0 !important; }
 		h2.accordion-header { font-family: var(--bodyFont); }
@@ -244,14 +244,14 @@
 	</header>
 	<main>
 		<section class="whiteBG py-5">
-			<div class="container top_headline">
-				<div class="row">
-					<div class="col text-center">
+			<div class="container top_headline my-5">
+				<div class="row justify-content-center">
+					<div class="col-10 text-center">
 						<h1><span>tell your story,</span> <img src="arrows.svg" alt="" role="presentation" width="39" height="32" /> engage your audience &mdash; transform your business &mdash; increase your revenue <img src="arrows.svg" alt="" role="presentation" width="39" height="32" /> <span>and drive growth.</span></h1>
 					</div>
 				</div>
 			</div>
-			<div class="container servicesmo">
+			<div class="container-fluid servicesmo" style="max-width:1320px;">
 				<div class="row">
 					<div class="col">
 						<h2 style="color:var(--gwred);">Services</h2>
@@ -321,7 +321,13 @@
 			</div>
 		</section>
 		<section class="whiteBG py-5" id="our-process">
-			<h2 class="d-block d-none-md ps-4 pb-4" style="color:var(--gwred);">Our Process</h2>
+			<div class="container d-block d-none-md ps-4 pb-4">
+				<div class="row">
+					<div class="col">
+						<h2 class="" style="color:var(--gwred);">Our Process</h2>
+					</div>
+				</div>
+			</div>
 			<div class="op_container">
 				
 				<div class="op_controls ps-4 pt-3 pt-md-0">
