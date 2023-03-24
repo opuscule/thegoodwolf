@@ -427,7 +427,7 @@
 			</div>
 		</section>
 		<section class="whiteBG py-5" id="our-process">
-			<div class="container d-block d-md-none ps-4 pb-4">
+			<div class="container d-block d-lg-none ps-4 pb-4">
 				<div class="row">
 					<div class="col">
 						<h2 class="" style="color:var(--gwred);">Our Process</h2>
@@ -437,7 +437,7 @@
 			<div class="op_container">
 				
 				<div class="op_controls ms-4 ms-md-0 pt-3 pt-md-0">
-					<h2 class="d-none d-md-block" style="color:var(--gwred);">Our Process</h2>
+					<h2 class="d-none d-lg-block" style="color:var(--gwred);">Our Process</h2>
 					
 					<div class="d-flex align-items-center">
 						<div class="op_button-prev me-5">
@@ -749,10 +749,13 @@
 		@media (max-width:575px) {
 			.logo2up { width: 35vw !important; }
 		}
+		@media (min-width:992px) and (max-width:1320px) {
+			#our-process .swiper-wrapper { max-width:62.5811vw !important; }
+		}
 	</style>
 	<script>
 		const swiper = new Swiper('.opSwiper', { 
-			slidesPerView: 3.5,
+			slidesPerView: 1.5,
 			spaceBetween: 10, 
 			centeredSlides: false, 
 			navigation: { nextEl: '.op_button-next', prevEl: '.op_button-prev', }, 
@@ -762,7 +765,7 @@
 					spaceBetween: 20,
 				},
 				575: {
-				  slidesPerView: 2.5,
+				  slidesPerView: 1.75,
 				  spaceBetween: 20,
 				},
 				768: {
@@ -770,8 +773,12 @@
 				  spaceBetween: 20,
 				},
 				992: {
-				  slidesPerView: 1.5,
+				  slidesPerView: 1.6,
 				  spaceBetween: 20,
+				},
+				1320: {
+					slidesPerView: 1.5,
+				  spaceBetween: 20,	
 				}
 			  },
 		});
